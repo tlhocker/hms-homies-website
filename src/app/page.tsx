@@ -166,32 +166,6 @@ export default function Home() {
         </AnimatedSection>
       </section>
 
-      {/* Insights Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/60">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 neon-glow">
-            Latest <span className="text-gradient">Insights</span>
-          </h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="glass-card p-6 flex flex-col h-full">
-              <h3 className="text-2xl font-semibold mb-2">How AI is Transforming Healthcare</h3>
-              <p className="text-gray-400 mb-4 flex-1">Explore the latest breakthroughs in AI-driven diagnostics, patient care, and medical research.</p>
-              <a href="/insights" className="text-blue-400 hover:underline mt-auto">Read more →</a>
-            </div>
-            <div className="glass-card p-6 flex flex-col h-full">
-              <h3 className="text-2xl font-semibold mb-2">Building Your First AI Project</h3>
-              <p className="text-gray-400 mb-4 flex-1">A step-by-step guide for beginners to launch their own machine learning applications.</p>
-              <a href="/insights" className="text-blue-400 hover:underline mt-auto">Read more →</a>
-            </div>
-            <div className="glass-card p-6 flex flex-col h-full">
-              <h3 className="text-2xl font-semibold mb-2">The Future of AI Education</h3>
-              <p className="text-gray-400 mb-4 flex-1">How collaborative learning and open resources are shaping the next generation of AI leaders.</p>
-              <a href="/insights" className="text-blue-400 hover:underline mt-auto">Read more →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Content Showcase Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-400/5 to-transparent" />
