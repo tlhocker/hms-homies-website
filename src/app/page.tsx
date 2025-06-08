@@ -70,7 +70,7 @@ export default function Home() {
         
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <motion.div variants={itemVariants} className="mb-6">
-            <Sparkles className="w-12 h-12 text-blue-500 mx-auto mb-4" />
+            <Sparkles className="w-12 h-12 text-blue-400 mx-auto mb-4" />
           </motion.div>
           <motion.h1 
             className="text-5xl md:text-7xl font-bold tracking-tight mb-4 neon-glow"
@@ -82,7 +82,7 @@ export default function Home() {
             className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8"
             variants={itemVariants}
           >
-            Homies AI Collective is where Harvard alumni connect, create, and redefine the boundaries of artificial intelligence.
+            HMS Homies AI Collective is where Harvard alumni connect, create, and redefine the boundaries of artificial intelligence.
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row justify-center items-center gap-4"
@@ -111,51 +111,57 @@ export default function Home() {
             Built for the <span className="text-gradient">AI-curious.</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-10">
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="glass-card p-6"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="flex items-center justify-center w-16 h-16 mb-4 relative">
-                  <span className="absolute inset-0 rounded-full bg-blue-500/20 animate-pulse" />
-                  <span className="relative z-10">
-                    <BrainCircuit size={40} className="text-blue-500" />
-                  </span>
+            <Link href="/learn" className="no-underline">
+              <motion.div
+                whileHover={{ y: -10 }}
+                className="glass-card p-6 h-full"
+              >
+                <div className="flex flex-col items-center text-center text-[#60A5FA]">
+                  <div className="flex items-center justify-center w-16 h-16 mb-4 relative">
+                    <span className="absolute inset-0 rounded-full bg-[#60A5FA]/20 animate-pulse" />
+                    <span className="relative z-10">
+                      <BrainCircuit size={40} className="text-[#60A5FA]" />
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-2">Learn Together</h3>
+                  <p className="opacity-80">Master AI fundamentals and advanced concepts with friends.</p>
                 </div>
-                <h3 className="text-2xl font-semibold mb-2">Learn Together</h3>
-                <p className="text-gray-400">Master AI fundamentals and advanced concepts with friends.</p>
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="glass-card p-6"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="flex items-center justify-center w-16 h-16 mb-4 relative">
-                  <span className="absolute inset-0 rounded-full bg-blue-500/20 animate-pulse" />
-                  <span className="relative z-10">
-                    <Users size={40} className="text-blue-500" />
-                  </span>
+              </motion.div>
+            </Link>
+            <Link href="/community" className="no-underline">
+              <motion.div
+                whileHover={{ y: -10 }}
+                className="glass-card p-6 h-full"
+              >
+                <div className="flex flex-col items-center text-center text-[#60A5FA]">
+                  <div className="flex items-center justify-center w-16 h-16 mb-4 relative">
+                    <span className="absolute inset-0 rounded-full bg-[#60A5FA]/20 animate-pulse" />
+                    <span className="relative z-10">
+                      <Users size={40} className="text-[#60A5FA]" />
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-2">Build Community</h3>
+                  <p className="opacity-80">Connect with a passionate network of Harvard innovators.</p>
                 </div>
-                <h3 className="text-2xl font-semibold mb-2">Build Community</h3>
-                <p className="text-gray-400">Connect with a passionate network of Harvard innovators.</p>
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="glass-card p-6"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="flex items-center justify-center w-16 h-16 mb-4 relative">
-                  <span className="absolute inset-0 rounded-full bg-blue-500/20 animate-pulse" />
-                  <span className="relative z-10">
-                    <Bot size={40} className="text-blue-500" />
-                  </span>
+              </motion.div>
+            </Link>
+            <Link href="/create" className="no-underline">
+              <motion.div
+                whileHover={{ y: -10 }}
+                className="glass-card p-6 h-full"
+              >
+                <div className="flex flex-col items-center text-center text-[#60A5FA]">
+                  <div className="flex items-center justify-center w-16 h-16 mb-4 relative">
+                    <span className="absolute inset-0 rounded-full bg-[#60A5FA]/20 animate-pulse" />
+                    <span className="relative z-10">
+                      <Bot size={40} className="text-[#60A5FA]" />
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-2">Create with AI</h3>
+                  <p className="opacity-80">Apply your skills to real-world projects and see your ideas come to life.</p>
                 </div>
-                <h3 className="text-2xl font-semibold mb-2">Create with AI</h3>
-                <p className="text-gray-400">Apply your skills to real-world projects and see your ideas come to life.</p>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           </div>
         </AnimatedSection>
       </section>
@@ -188,7 +194,7 @@ export default function Home() {
 
       {/* Content Showcase Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-400/5 to-transparent" />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center px-4">
             <div className="max-w-md mx-auto">
@@ -265,7 +271,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-bold mb-4 neon-glow">
             Ready to <span className="text-gradient">join?</span>
           </h2>
-          <p className="text-xl text-gray-300 mb-8">Become part of the Homies AI Collective network.</p>
+          <p className="text-xl text-gray-300 mb-8">Become part of the HMS Homies AI Collective network.</p>
           <GlowingButton href="/get-started" className="mx-auto">
             Get Started
           </GlowingButton>

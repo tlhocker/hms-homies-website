@@ -22,6 +22,7 @@ const Navigation = () => {
     { href: '/#features', label: 'Features' },
     { href: '/community', label: 'Community' },
     { href: '/insights', label: 'Insights' },
+    { href: '/ai-tools', label: 'AI Tools' },
   ]
 
   return (
@@ -47,9 +48,9 @@ const Navigation = () => {
               <Image 
                 src="/hms-logo.jpg" 
                 alt="HMS Homies AI Collective Logo" 
-                width={128} 
-                height={128} 
-                className="h-20 w-auto relative border-2 border-transparent hover:border-blue-500/50 transition-all duration-300" 
+                width={100} 
+                height={100} 
+                className="h-16 w-auto relative border-2 border-transparent hover:border-blue-500/50 transition-all duration-300" 
                 style={{ objectFit: 'contain' }}
               />
             </Link>
@@ -76,13 +77,15 @@ const Navigation = () => {
                 </Link>
               </motion.div>
             ))}
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(59, 130, 246, 0.5)" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-medium px-6 py-2.5 rounded-full hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
-            >
-              Sign Up
-            </motion.button>
+            <Link href="/get-started">
+              <motion.button 
+                whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(59, 130, 246, 0.5)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-medium px-6 py-2.5 rounded-full hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+              >
+                Sign Up
+              </motion.button>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -126,13 +129,15 @@ const Navigation = () => {
               </Link>
             </motion.div>
           ))}
-          <motion.button 
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium py-3 rounded-full hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg"
-          >
-            Sign Up
-          </motion.button>
+          <Link href="/get-started" className="w-full">
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium py-3 rounded-full hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg"
+            >
+              Sign Up
+            </motion.button>
+          </Link>
         </div>
       </motion.div>
     </motion.header>

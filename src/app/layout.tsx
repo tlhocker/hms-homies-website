@@ -7,7 +7,7 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Homies AI Collective",
+  title: "HMS Homies AI Collective",
   description: "A community for Harvard alumni to learn, build, and collaborate in the world of AI.",
   icons: {
     icon: '/favicon.ico',

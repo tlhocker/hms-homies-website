@@ -84,7 +84,7 @@ body::before {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -151,12 +151,42 @@ body::before {
   animation: pulse-glow 2s infinite;
 }
 
-/* Futuristic text gradient */
+/* Typography enhancements */
+.prose {
+  max-width: 100%;
+}
+
+.prose p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.8;
+}
+
+.prose-invert {
+  color: rgb(209, 213, 219);
+}
+
+/* Improved gradient text effect */
 .text-gradient {
-  background: linear-gradient(to right, #60A5FA, #34D399);
+  background: linear-gradient(to right, #60A5FA, #34D399, #60A5FA);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: gradient 8s linear infinite;
+  letter-spacing: -0.025em;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Neon glow effect */
@@ -196,4 +226,23 @@ body::before {
   100% {
     background-position: 0% 0%;
   }
+}
+
+/* Feature card link overrides */
+.glass-card h3,
+.glass-card p,
+.glass-card svg {
+  color: inherit !important;
+}
+
+.glass-card:hover h3 {
+  color: white !important;
+}
+
+.glass-card:hover p {
+  color: rgb(191, 219, 254) !important; /* text-blue-200 */
+}
+
+.glass-card:hover svg {
+  color: rgb(96, 165, 250) !important; /* text-blue-400 */
 }
