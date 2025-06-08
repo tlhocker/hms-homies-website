@@ -128,11 +128,11 @@ export default function LearnPage() {
                 <tool.icon className="w-72 h-72 text-white" />
               </div>
               <h3 className="text-2xl font-semibold mb-6 text-gradient neon-glow">{tool.name}</h3>
-              <ul className="text-left space-y-3 text-gray-300">
+              <ul className="text-left space-y-3">
                 {tool.description.map((point, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-blue-400 mr-2">•</span>
-                    <span className="leading-relaxed">{point}</span>
+                  <li key={index} className="flex items-start no-underline">
+                    <span className="text-[#60A5FA] mr-2">•</span>
+                    <span className="leading-relaxed text-[#60A5FA]">{point}</span>
                   </li>
                 ))}
               </ul>
