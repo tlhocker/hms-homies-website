@@ -120,7 +120,7 @@ export default function LearnPage() {
               href={tool.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-card p-8 flex flex-col items-center text-center group hover:bg-white/5"
+              className="glass-card p-8 flex flex-col items-center text-center group hover:bg-white/5 no-underline"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.2 }}
             >
@@ -128,11 +128,11 @@ export default function LearnPage() {
                 <tool.icon className="w-72 h-72 text-white" />
               </div>
               <h3 className="text-2xl font-semibold mb-6 text-gradient neon-glow">{tool.name}</h3>
-              <ul className="text-left space-y-3">
+              <ul className="text-left space-y-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {tool.description.map((point, index) => (
-                  <li key={index} className="flex items-start no-underline">
+                  <li key={index} className="flex items-start">
                     <span className="text-[#60A5FA] mr-2">•</span>
-                    <span className="leading-relaxed text-[#60A5FA]">{point}</span>
+                    <span className="leading-relaxed text-[#60A5FA] no-underline">{point}</span>
                   </li>
                 ))}
               </ul>
