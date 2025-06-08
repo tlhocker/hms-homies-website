@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion';
 import { SiOpenai, SiGooglegemini, SiGooglecloud, SiGoogle } from 'react-icons/si';
 import { FaRobot, FaBookReader, FaSearchengin } from 'react-icons/fa';
-import Link from 'next/link';
 
 export default function LearnPage() {
   const aiTools = [

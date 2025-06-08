@@ -1,29 +1,54 @@
 "use client";
-import { Particles } from "@tsparticles/react";
+import { useEffect } from 'react';
+import { tsParticles } from '@tsparticles/engine';
+import { loadSlim } from '@tsparticles/slim';
 
 export default function ParticlesBackground() {
-  const particlesOptions: any = {
-    fullScreen: { enable: false },
-    background: { color: "transparent" },
-    fpsLimit: 60,
-    particles: {
-      number: { value: 60, density: { enable: true, value_area: 800 } },
-      color: { value: "#60A5FA" },
-      links: { enable: true, color: "#60A5FA", opacity: 0.2, distance: 120 },
-      move: { enable: true, speed: 0.5, outModes: { default: 'out' } },
-      opacity: { value: 0.2 },
-      size: { value: 2 },
-    },
-    interactivity: {
-      events: { onHover: { enable: true, mode: "repulse" }, resize: true },
-      modes: { repulse: { distance: 80, duration: 0.4 } },
-    },
-    detectRetina: true,
-  };
+  useEffect(() => {
+    const initParticles = async () => {
+      await loadSlim(tsParticles);
+      
+      await tsParticles.load({
+        id: 'tsparticles',
+        options: {
+          background: {
+            color: {
+              value: "transparent",
+            },
+          },
+          particles: {
+            color: {
+              value: "#60A5FA",
+            },
+            links: {
+              color: "#60A5FA",
+              distance: 150,
+              enable: true,
+              opacity: 0.2,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 1,
+            },
+            number: {
+              value: 80,
+            },
+            opacity: {
+              value: 0.2,
+            },
+            size: {
+              value: 2,
+            },
+          },
+        },
+      });
+    };
+
+    initParticles();
+  }, []);
 
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none">
-      <Particles id="tsparticles" options={particlesOptions} className="w-full h-full" />
-    </div>
+    <div className="fixed inset-0 z-0 pointer-events-none" id="tsparticles" />
   );
 } 

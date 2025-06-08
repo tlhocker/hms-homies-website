@@ -190,7 +190,7 @@ export default function Home() {
                 The Homies AI <span className="text-gradient">Community</span>
               </h3>
               <p className="text-xl text-gray-300 mb-6">
-                More than a network—it's a family of innovators, thinkers, and friends, learning and building together.
+                More than a network&mdash;it&apos;s a family of innovators, thinkers, and friends, learning and building together.
               </p>
               <Link href="/community" className="group inline-flex items-center gap-2 relative">
                 <span className="text-lg text-blue-400 group-hover:text-blue-300 transition-colors">
