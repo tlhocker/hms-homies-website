@@ -32,7 +32,7 @@ const Navigation = () => {
       transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'border-b border-gray-800/20 bg-black/60 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.5)]' 
+          ? 'bg-black/60 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.5)]' 
           : 'bg-transparent'
       }`}
     >
