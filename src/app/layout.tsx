@@ -47,6 +47,10 @@ export default function RootLayout({
             {children}
           </main>
         </div>
+
+        {/* Glow Effects */}
+        <div className="fixed top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+        <div className="fixed bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
       </body>
     </html>
   );
