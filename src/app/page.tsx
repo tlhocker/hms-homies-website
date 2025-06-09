@@ -24,23 +24,6 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
   )
 }
 
-const GlowingButton = ({ children, className = '', href }: { children: React.ReactNode, className?: string, href: string }) => (
-  <Link href={href}>
-    <motion.button
-      whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
-      whileTap={{ scale: 0.95 }}
-      className={`bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold px-8 py-4 rounded-full text-lg 
-        hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg relative overflow-hidden ${className}`}
-    >
-      <span className="relative z-10 flex items-center gap-2">
-        {children}
-      </span>
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 
-        transform -translate-x-full hover:translate-x-full transition-transform duration-1000" />
-    </motion.button>
-  </Link>
-)
-
 export default function Home() {
   const heroVariants = {
     hidden: { opacity: 0 },
@@ -84,23 +67,6 @@ export default function Home() {
           >
             HMS Homies AI Collective is where Harvard alumni connect, create, and redefine the boundaries of artificial intelligence.
           </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row justify-center items-center gap-4"
-            variants={itemVariants}
-          >
-            <GlowingButton href="/get-started">
-              Get Started <ArrowRight size={20} />
-            </GlowingButton>
-            <Link href="/join-waitlist">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="glass-card px-8 py-4 rounded-full text-lg text-white flex items-center gap-2 group"
-              >
-                Join Waitlist <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-            </Link>
-          </motion.div>
         </div>
       </motion.section>
 
@@ -246,9 +212,6 @@ export default function Home() {
             Ready to <span className="text-gradient">join?</span>
           </h2>
           <p className="text-xl text-gray-300 mb-8">Become part of the HMS Homies AI Collective network.</p>
-          <GlowingButton href="/get-started" className="mx-auto">
-            Get Started
-          </GlowingButton>
         </AnimatedSection>
       </section>
     </div>
