@@ -34,10 +34,11 @@ export async function POST(request: NextRequest) {
   try {
     const { messages } = await request.json();
     
-        // Initialize Google Gemini Pro with enhanced capabilities
+        // Initialize Google Gemini Pro with Google Search grounding
     const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
     const model = genAI.getGenerativeModel({ 
       model: "gemini-1.5-pro",
+      tools: [{ googleSearchRetrieval: {} }], // Enable Google Search grounding
       generationConfig: {
         temperature: 0.7,
         topK: 40,
