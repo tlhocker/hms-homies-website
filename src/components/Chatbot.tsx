@@ -358,7 +358,7 @@ export function Chatbot() {
                 color: '#6b7280'
               }}>
                 <span>Press Enter to send, Shift+Enter for new line</span>
-                <span style={{ color: '#4285f4' }}>Powered by Google Gemini</span>
+                <span style={{ color: '#4285f4' }}>Powered by Google Gemini Pro</span>
               </div>
             </form>
           </div>
