@@ -29,11 +29,10 @@ export async function POST(request: NextRequest) {
   try {
     const { messages } = await request.json();
     
-    // Initialize Google Gemini
+    // Initialize Google Gemini 
     const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
     const model = genAI.getGenerativeModel({ 
-      model: "gemini-1.5-flash",
-      tools: [{ googleSearchRetrieval: {} }] // Enable web search
+      model: "gemini-1.5-flash"
     });
 
     console.log('Gemini API Key exists:', !!process.env.GOOGLE_API_KEY);
@@ -41,32 +40,25 @@ export async function POST(request: NextRequest) {
     console.log('API route called');
     console.log('Messages received:', messages);
 
-    // Format messages for Gemini
-    const chatHistory = messages.slice(0, -1).map((msg: { role: string; content: string }) => ({
-      role: msg.role === 'assistant' ? 'model' : 'user',
-      parts: [{ text: msg.content }]
-    }));
-
     const lastMessage = messages[messages.length - 1];
     
-    // Start chat with history
-    const chat = model.startChat({
-      history: [
-        {
-          role: 'user',
-          parts: [{ text: systemPrompt }]
-        },
-        {
-          role: 'model', 
-          parts: [{ text: 'Hello! I\'m your AI Medical Mentor, ready to help you learn how to use AI tools effectively in your medical practice. What would you like to know?' }]
-        },
-        ...chatHistory
-      ],
-    });
-
-    console.log('About to call Gemini');
+    console.log('About to call Gemini with search instructions');
     
-    const result = await chat.sendMessage(lastMessage.content);
+    // Create a prompt that instructs the model to search for current information
+    const searchPrompt = `${systemPrompt}
+
+IMPORTANT: Please search the web for current, up-to-date information when answering questions about:
+- Recent AI developments 
+- Current medical technologies
+- Latest research findings
+- Current events or news
+- Recent tool releases or updates
+
+User question: ${lastMessage.content}
+
+Please provide a comprehensive answer based on the most current information available.`;
+
+    const result = await model.generateContent(searchPrompt);
     const response = await result.response;
     const text = response.text();
 
