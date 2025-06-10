@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     console.log('Messages received:', messages);
 
     // Format messages for Gemini
-    const chatHistory = messages.slice(0, -1).map((msg: any) => ({
+    const chatHistory = messages.slice(0, -1).map((msg: { role: string; content: string }) => ({
       role: msg.role === 'assistant' ? 'model' : 'user',
       parts: [{ text: msg.content }]
     }));
@@ -74,13 +74,15 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ content: text });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error in API route:', error);
-    console.error('Error details:', error.message);
-    console.error('Error stack:', error.stack);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const errorStack = error instanceof Error ? error.stack : undefined;
+    console.error('Error details:', errorMessage);
+    console.error('Error stack:', errorStack);
     
     return NextResponse.json(
-      { error: 'Failed to process request', details: error.message },
+      { error: 'Failed to process request', details: errorMessage },
       { status: 500 }
     );
   }

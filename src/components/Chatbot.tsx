@@ -238,7 +238,7 @@ export function Chatbot() {
                     Welcome to AI Medical Mentor!
                   </h4>
                   <p style={{ fontSize: '14px', lineHeight: '1.6' }}>
-                    I'm your digital resident here to help you learn how to use AI tools like ChatGPT effectively in your medical practice. What would you like to know?
+                    I&apos;m your digital resident here to help you learn how to use AI tools like ChatGPT effectively in your medical practice. What would you like to know?
                   </p>
                 </div>
               )}
